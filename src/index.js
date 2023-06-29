@@ -16,7 +16,7 @@
 
 */
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import AdminLayout from 'layouts/Admin/Admin.js';
@@ -35,9 +35,8 @@ import './index.scss';
 import ThemeContextWrapper from './components/ThemeWrapper/ThemeWrapper';
 import BackgroundColorWrapper from './components/BackgroundColorWrapper/BackgroundColorWrapper';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(
+const App = () => (
   <ThemeContextWrapper>
     <BackgroundColorWrapper>
       <BrowserRouter>
@@ -53,3 +52,5 @@ root.render(
     </BackgroundColorWrapper>
   </ThemeContextWrapper>
 );
+
+ReactDOM.render(<App />, document.getElementById('root'));
